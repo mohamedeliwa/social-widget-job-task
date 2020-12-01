@@ -7,8 +7,6 @@ import AttachFileIcon from "@material-ui/icons/AttachFile";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 
-
-
 export default function Home() {
   return (
     <div>
@@ -18,7 +16,11 @@ export default function Home() {
       </Head>
       <Container
         maxWidth="lg"
-        style={{ backgroundColor: "#cfe8fc", height: "100vh", paddingTop: '20px'  }}
+        style={{
+          backgroundColor: "#cfe8fc",
+          height: "100vh",
+          paddingTop: "20px",
+        }}
       >
         <Grid
           container
@@ -43,12 +45,16 @@ export default function Home() {
             style={{
               // backgroundColor: "lightgreen",
               width: "100%",
-              marginBottom: "5px",
+              marginBottom: "15px",
               marginTop: "5px",
             }}
           >
-            <TextField id="standard-basic" label="write a post" fullWidth/>
-            <IconButton variant="contained" component="label">
+            <TextField id="standard-basic" label="write a post" fullWidth />
+            <IconButton
+              variant="contained"
+              component="label"
+              style={{ borderBottom: "1px solid grey" }}
+            >
               <AttachFileIcon fontSize="small" />
               <input type="file" hidden />
             </IconButton>
@@ -62,22 +68,22 @@ export default function Home() {
               overflow: "scroll",
             }}
           >
-            <Card style={{margin: '3px 0'}}>
+            <Card style={{ margin: "3px 0" }}>
               <CardContent>
                 lorem Hello garen where are you man I keen to see you live
               </CardContent>
             </Card>
-            <Card style={{margin: '3px 0'}}>
+            <Card style={{ margin: "3px 0" }}>
               <CardContent>
                 lorem Hello garen where are you man I keen to see you live
               </CardContent>
             </Card>
-            <Card style={{margin: '3px 0'}}>
+            <Card style={{ margin: "3px 0" }}>
               <CardContent>
                 lorem Hello garen where are you man I keen to see you live
               </CardContent>
             </Card>
-            <Card style={{margin: '3px 0'}}>
+            <Card style={{ margin: "3px 0" }}>
               <CardContent>
                 <img
                   style={{ width: "100%", height: "100%" }}
