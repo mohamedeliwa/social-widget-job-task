@@ -18,6 +18,7 @@ const Inputs = () => {
   const textSubmit = (e) => {
     e.preventDefault();
     dispatch(addText(text));
+    setText("")
   };
 
   const uploadFile = (e) => {
@@ -48,6 +49,7 @@ const Inputs = () => {
           label="write a post"
           fullWidth
           onChange={textChange}
+          value={text}
         />
       </form>
       <IconButton
