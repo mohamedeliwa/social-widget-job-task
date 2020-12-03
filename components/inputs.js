@@ -27,6 +27,8 @@ const Inputs = () => {
       dispatch(addImage(URL.createObjectURL(e.target.files[0])));
     } else if (e.target.files[0].type == "video/mp4") {
       dispatch(addVideo(URL.createObjectURL(e.target.files[0])));
+    } else {
+      alert("onyl .jpg, and mp4 are allowed!")
     }
   };
   return (
