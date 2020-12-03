@@ -8,18 +8,18 @@ const NewsFeed = () => {
   console.log(posts);
 
   // Posts JSX
-  const Posts = posts.map((post) => {
+  const Posts = posts.map((post, index) => {
     switch (post.type) {
       case "text":
         return (
-          <Card style={{ margin: "3px 0" }}>
+          <Card style={{ margin: "3px 0" }} key={index}>
             <CardContent>{post.content}</CardContent>
           </Card>
         );
         break;
       case "image":
         return (
-          <Card style={{ margin: "3px 0" }}>
+          <Card style={{ margin: "3px 0" }} key={index}>
             <CardContent>
               <img
                 style={{ width: "100%", height: "100%" }}
@@ -31,7 +31,7 @@ const NewsFeed = () => {
         break;
       case "video":
         return (
-          <Card style={{ margin: "3px 0" }}>
+          <Card style={{ margin: "3px 0" }} key={index}>
             <CardContent>
               <video controls width="100%" height="100%">
                 <source src={post.src} type="video/mp4" />
