@@ -28,10 +28,10 @@ export const slice = createSlice({
     ],
   },
   reducers: {
-    addText: (state) => {
+    addText: (state, action) => {
       state.value.unshift({
         type: "text",
-        content: "Hello World From Redux Store!",
+        content: action.payload,
       });
     },
     addImage: (state) => {

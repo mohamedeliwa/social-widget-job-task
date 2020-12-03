@@ -17,8 +17,7 @@ const Inputs = () => {
   };
   const textSubmit = (e) => {
     e.preventDefault();
-    console.log("asda");
-    dispatch(addText());
+    dispatch(addText(text));
   };
   return (
     <Grid
