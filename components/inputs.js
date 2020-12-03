@@ -6,8 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { add, selectPosts } from "../redux/slice";
 
 const Inputs = () => {
-    const posts = useSelector(selectPosts);
-    console.log(posts);
+    
     const dispatch = useDispatch();
     // onClick={() => dispatch(add())}
   return (

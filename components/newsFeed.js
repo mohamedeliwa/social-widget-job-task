@@ -1,7 +1,49 @@
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import { useSelector } from "react-redux";
+import { selectPosts } from "../redux/slice";
 
 const NewsFeed = () => {
+  const posts = useSelector(selectPosts);
+  console.log(posts);
+
+  // Posts JSX
+  const Posts = posts.map((post) => {
+    switch (post.type) {
+      case "text":
+        return (
+          <Card style={{ margin: "3px 0" }}>
+            <CardContent>{post.content}</CardContent>
+          </Card>
+        );
+        break;
+      case "image":
+        return (
+          <Card style={{ margin: "3px 0" }}>
+            <CardContent>
+              <img
+                style={{ width: "100%", height: "100%" }}
+                src={post.src}
+              ></img>
+            </CardContent>
+          </Card>
+        );
+        break;
+      case "video":
+        return (
+          <Card style={{ margin: "3px 0" }}>
+            <CardContent>
+              <video controls width="100%" height="100%">
+                <source src={post.src} type="video/mp4" />
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+            </CardContent>
+          </Card>
+        );
+        break;
+    }
+  });
+
   return (
     <div
       style={{
@@ -10,38 +52,7 @@ const NewsFeed = () => {
         overflow: "scroll",
       }}
     >
-      <Card style={{ margin: "3px 0" }}>
-        <CardContent>
-          lorem Hello garen where are you man I keen to see you live
-        </CardContent>
-      </Card>
-      <Card style={{ margin: "3px 0" }}>
-        <CardContent>
-          lorem Hello garen where are you man I keen to see you live
-        </CardContent>
-      </Card>
-      <Card style={{ margin: "3px 0" }}>
-        <CardContent>
-          lorem Hello garen where are you man I keen to see you live
-        </CardContent>
-      </Card>
-      <Card style={{ margin: "3px 0" }}>
-        <CardContent>
-          <img
-            style={{ width: "100%", height: "100%" }}
-            src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg"
-          ></img>
-        </CardContent>
-      </Card>
-      <Card>
-        <CardContent>
-          <video controls width="100%" height="100%">
-            <source src="/media/cc0-videos/flower.webm" type="video/webm" />
-            <source src="/media/cc0-videos/flower.mp4" type="video/mp4" />
-            Sorry, your browser doesn't support embedded videos.
-          </video>
-        </CardContent>
-      </Card>
+      {Posts}
     </div>
   );
 };
