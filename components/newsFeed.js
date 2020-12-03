@@ -5,8 +5,6 @@ import { selectPosts } from "../redux/slice";
 
 const NewsFeed = () => {
   const posts = useSelector(selectPosts);
-  console.log(posts);
-
   // Posts JSX
   const Posts = posts.map((post, index) => {
     switch (post.type) {

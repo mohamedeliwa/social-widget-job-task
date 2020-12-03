@@ -19,6 +19,15 @@ const Inputs = () => {
     e.preventDefault();
     dispatch(addText(text));
   };
+
+  const uploadFile = (e) => {
+    e.preventDefault();
+    if (e.target.files[0].type == "image/jpeg") {
+      dispatch(addImage(URL.createObjectURL(e.target.files[0])));
+    } else if (e.target.files[0].type == "video/mp4") {
+      dispatch(addVideo(URL.createObjectURL(e.target.files[0])));
+    }
+  };
   return (
     <Grid
       container
@@ -47,7 +56,12 @@ const Inputs = () => {
         style={{ borderBottom: "1px solid grey" }}
       >
         <AttachFileIcon fontSize="small" />
-        <input type="file" hidden />
+        <input
+          type="file"
+          hidden
+          onChange={uploadFile}
+          accept="image/jpg,video/mp4"
+        />
       </IconButton>
     </Grid>
   );

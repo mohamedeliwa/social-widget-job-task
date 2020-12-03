@@ -34,17 +34,19 @@ export const slice = createSlice({
         content: action.payload,
       });
     },
-    addImage: (state) => {
+    addImage: (state, action) => {
       state.value.unshift({
         type: "image",
         src:
-          "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+          // "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
+          action.payload,
       });
     },
-    addVideo: (state) => {
+    addVideo: (state, action) => {
       state.value.unshift({
         type: "video",
-        src: "/media/cc0-videos/flower.mp4",
+        // src: "/media/cc0-videos/flower.mp4",
+        src: action.payload,
       });
     },
   },
