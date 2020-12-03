@@ -6,8 +6,14 @@ import TextField from "@material-ui/core/TextField";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import { useSelector, useDispatch } from "react-redux";
+import { add, selectPosts } from "../redux/slice";
 
 export default function Home() {
+  const posts = useSelector(selectPosts)
+  const dispatch = useDispatch();
+// onClick={() => dispatch(increment())}
+
   return (
     <div>
       <Head>
