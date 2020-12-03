@@ -3,6 +3,7 @@ import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Inputs from "../components/inputs";
 import NewsFeed from "../components/newsFeed";
+import Tags from "../components/tags";
 
 export default function Home() {
   return (
@@ -34,6 +35,8 @@ export default function Home() {
         >
           {/* Input Group */}
           <Inputs />
+          {/* Tags */}
+          <Tags />
           {/* News Feed */}
           <NewsFeed />
         </Grid>

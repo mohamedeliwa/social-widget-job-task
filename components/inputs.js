@@ -3,7 +3,6 @@ import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
-import FormControl from "@material-ui/core/FormControl";
 import { useDispatch } from "react-redux";
 import { addText, addImage, addVideo } from "../redux/slice";
 
