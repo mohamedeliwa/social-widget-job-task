@@ -29,20 +29,20 @@ export const slice = createSlice({
   },
   reducers: {
     addText: (state) => {
-      state.value.append({
+      state.value.unshift({
         type: "text",
         content: "Hello World From Redux Store!",
       });
     },
     addImage: (state) => {
-      state.value.append({
+      state.value.unshift({
         type: "image",
         src:
           "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg",
       });
     },
     addVideo: (state) => {
-      state.value.append({
+      state.value.unshift({
         type: "video",
         src: "/media/cc0-videos/flower.mp4",
       });
@@ -50,7 +50,7 @@ export const slice = createSlice({
   },
 });
 
-export const { add } = slice.actions;
+export const { addText, addImage, addVideo } = slice.actions;
 
 // The function below is called a thunk and allows us to perform async logic. It
 // can be dispatched like a regular action: `dispatch(incrementAsync(10))`. This

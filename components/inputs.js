@@ -1,14 +1,25 @@
+import { useState } from "react";
 import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import AttachFileIcon from "@material-ui/icons/AttachFile";
-import { useSelector, useDispatch } from "react-redux";
-import { add, selectPosts } from "../redux/slice";
+import FormControl from "@material-ui/core/FormControl";
+import { useDispatch } from "react-redux";
+import { addText, addImage, addVideo } from "../redux/slice";
 
 const Inputs = () => {
-    
-    const dispatch = useDispatch();
-    // onClick={() => dispatch(add())}
+  const dispatch = useDispatch();
+  const [text, setText] = useState("");
+
+  const textChange = (e) => {
+    e.preventDefault();
+    setText(e.target.value);
+  };
+  const textSubmit = (e) => {
+    e.preventDefault();
+    console.log("asda");
+    dispatch(addText());
+  };
   return (
     <Grid
       container
@@ -23,7 +34,14 @@ const Inputs = () => {
         marginTop: "5px",
       }}
     >
-      <TextField id="standard-basic" label="write a post" fullWidth />
+      <form style={{ width: "100%" }} onSubmit={textSubmit}>
+        <TextField
+          id="standard-basic"
+          label="write a post"
+          fullWidth
+          onChange={textChange}
+        />
+      </form>
       <IconButton
         variant="contained"
         component="label"
