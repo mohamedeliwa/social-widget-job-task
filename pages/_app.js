@@ -1,5 +1,7 @@
 import Head from "next/head";
-import CssBaseline from '@material-ui/core/CssBaseline';
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { Provider } from "react-redux";
+import store from "../redux/store";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -11,8 +13,10 @@ function MyApp({ Component, pageProps }) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <CssBaseline />
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <CssBaseline />
+        <Component {...pageProps} />
+      </Provider>
     </>
   );
 }
